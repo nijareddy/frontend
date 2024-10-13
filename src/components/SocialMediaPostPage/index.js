@@ -9,7 +9,7 @@ function SocialMediaPostPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3004/submissions/${id}`);
+        const response = await fetch(`https://social-task-backend.onrender.com/submissions/${id}`);
         const data = await response.json();
         const updatedSubmissions = data.map((submission) => ({
           ...submission,
@@ -37,7 +37,7 @@ function SocialMediaPostPage() {
           {submission.images?.length > 0 ? (
             submission.images.map((imageUrl) => (
               <li key={submission.id}>
-                <img src={`http://localhost:3004${imageUrl}`}
+                <img src={`https://social-task-backend.onrender.com${imageUrl}`}
                alt={imageUrl.split('/').pop()} className='image' />
               </li>
             ))
